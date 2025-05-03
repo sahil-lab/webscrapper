@@ -12,6 +12,7 @@ A powerful research tool that can scrape web content from URLs and convert it to
 - Generate research summaries
 - Convert scraped data to various formats (JSON, CSV, Markdown)
 - Unified workflow combining scraping and conversion
+- User-friendly graphical interface
 
 ## Requirements
 
@@ -22,6 +23,7 @@ A powerful research tool that can scrape web content from URLs and convert it to
   - lxml
   - chardet
   - tqdm
+  - tkinter (usually included with Python)
 
 ## Installation
 
@@ -34,9 +36,27 @@ pip install -r requirements.txt
 
 ## Usage
 
-The tool provides both individual component scripts and a unified interface through `research_assistant.py`. The unified interface is recommended for most use cases.
+### Graphical User Interface
 
-### Using the Unified Interface
+For most users, the graphical interface provides the easiest way to use the tool:
+
+```bash
+python ui_app.py
+```
+
+The GUI includes tabs for:
+- **Single URL**: Scrape content from a single web page
+- **Batch URLs**: Process multiple URLs from a text file
+- **Web Crawler**: Crawl a website by following links
+- **Convert Format**: Convert previously scraped data to different formats
+
+Each tab includes the appropriate options and a console output area for viewing progress.
+
+### Command Line Interface
+
+The tool also provides both individual component scripts and a unified command-line interface through `research_assistant.py`. 
+
+#### Using the Unified Interface
 
 ```bash
 python research_assistant.py [command] [options]
@@ -119,6 +139,10 @@ Available formats:
 Options:
 - `--input-dir, -i`: Directory containing scraped text files (default: "research_data")
 - `--output, -o`: Output file path (default is based on format and input directory)
+
+### Programmatic Usage
+
+The tool can also be used programmatically in your own Python scripts. See `example_usage.py` for demonstration.
 
 ## Output Format
 
